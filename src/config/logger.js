@@ -13,10 +13,15 @@ if (!fs.existsSync(logDir)) {
 const logger = winston.createLogger({
   level: config.LOG_LEVEL || "info",
   format: winston.format.combine(
-    winston.format.timestamp(),
+    winston.format.timestamp({
+      format: () => new Date().toLocaleString('es-EC', {
+        timeZone: 'America/Guayaquil'
+      })
+    }),
     winston.format.errors({ stack: true }),
     winston.format.json()
   ),
+
   transports: [
     new winston.transports.File({
       filename: path.join(logDir, "api.log"),

@@ -11,7 +11,7 @@ const config = {
     },
 
     // MongoDB
-    MONGODB_URI: 'mongodb+srv://ravvilla:12345@cluster0.y0vrdvx.mongodb.net/',
+    MONGODB_URI: 'mongodb+srv://ravvilla:12345@cluster0.y0vrdvx.mongodb.net/indiec?retryWrites=true&w=majority',
 
     // JWT
     JWT: {

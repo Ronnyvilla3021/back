@@ -25,11 +25,11 @@ const userDetailsSchema = new mongoose.Schema(
     },
     preferences: {
       type: Object,
-      default: {},
+      default: () => ({}),  // mejor usar función para default de objetos
     },
     social_links: {
       type: Array,
-      default: [],
+      default: () => [],  // igual para arrays
     },
   },
   {
